@@ -1,0 +1,6 @@
+numpy==2.2.2
+scipy==1.15.1
+matplotlib==3.10.0
+sympy==1.13.3
+PySide6==6.8.1.1
+numdifftools==0.9.41
