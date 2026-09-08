@@ -1,12 +1,14 @@
-# numerical methods resolution and visualization
+# Numerical Methods Resolution and Visualization
 
-Interactive Python applications for exploring numerical methods through graphical interfaces and visual outputs.
+Interactive Python applications for solving and visualizing numerical problems through graphical user interfaces.
 
-The project contains two tools: a root-finding visualizer and a two-dimensional linear dynamical-system solver.
+The repository contains two applications: a root-finding tool that compares several numerical algorithms and a two-dimensional linear dynamical-system solver combining numerical, symbolic, and graphical analysis.
 
 ## Root-Finding Visualizer
 
-The root-finding application implements and compares several numerical methods:
+The root-finding application allows the user to define a function, select a numerical method and tolerance, compute a root, and inspect how the numerical approximation converges.
+
+Implemented methods include:
 
 - Bisection
 - Secant method
@@ -16,13 +18,26 @@ The root-finding application implements and compares several numerical methods:
 - Fixed-point iteration
 - Random search
 
-The user can define a function, select a numerical method and tolerance, and visualize both the estimated root and the sequence of approximations.
+### Application interface
 
-![Root-Finding Visualizer](assets/root_finding_demo.png)
+![Root-Finding Interface](assets/root_finding_interface.png)
 
-## Linear Dynamical System Visualizer
+The application returns the estimated root, computation time, and sequence of numerical approximations.
 
-The second application studies systems of the form
+### Numerical convergence
+
+<p align="center">
+  <img src="assets/root_finding_convergence.png" width="48%">
+  <img src="assets/root_finding_function.png" width="48%">
+</p>
+
+The convergence plot shows the sequence of approximations produced by the selected algorithm, while the function plot displays the estimated root relative to the function itself.
+
+---
+
+## Equation-System Resolution and Visualization
+
+The second application analyzes two-dimensional linear dynamical systems of the form
 
 \[
 \begin{aligned}
@@ -31,42 +46,48 @@ y_2'(t) &= a_{21}y_1(t) + a_{22}y_2(t) + b_2.
 \end{aligned}
 \]
 
-It combines numerical and symbolic analysis by providing:
+It combines numerical and symbolic analysis and provides:
 
 - Numerical integration with SciPy
 - Symbolic solutions with SymPy
 - Stationary-state calculation
-- Phase portraits
-- Time-series trajectories
+- Phase-space trajectories
+- Time-series visualization
 - Animated solutions
 - Numerical result tables
 
-![Linear Dynamical System Visualizer](assets/linear_system_demo.png)
+### Application interface and phase-space visualization
+
+![Equation-System Visualizer](assets/equations_system_interface.png)
+
+The interface displays the model parameters, symbolic solution, stationary state, numerical trajectory, and corresponding phase-space representation.
+
+---
 
 ## Run the Applications
 
-Clone the repository and install the dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Root-finding application:
+Run the root-finding application:
 
 ```bash
 python apps/root_finding_visualizer.py
 ```
 
-Linear dynamical-system application:
+Run the dynamical-system application:
 
 ```bash
-python apps/linear_dynamical_system_visualizer.py
+python apps/equations_system_resolution_and_visualization.py
 ```
 
 ## Technologies
 
-Python, NumPy, SciPy, SymPy, Matplotlib, PySide6, and Tkinter.
+Python, NumPy, SciPy, SymPy, Matplotlib, PySide6, Tkinter, and Numdifftools.
 
 ## Purpose
 
-This project was developed to explore numerical algorithms interactively and connect their mathematical formulation with numerical and graphical representations.
+This project illustrates how numerical algorithms can be combined with interactive interfaces and graphical visualization to make their behavior and results easier to interpret.
